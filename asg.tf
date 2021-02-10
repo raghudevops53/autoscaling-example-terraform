@@ -8,6 +8,7 @@ resource "aws_autoscaling_group" "asg" {
     id                      = aws_launch_template.asg.id
     version                 = "$Latest"
   }
+  availability_zones = ["us-east-1a"]
 }
 
 resource "aws_launch_template" "asg" {
