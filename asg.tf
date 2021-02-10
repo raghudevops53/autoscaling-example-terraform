@@ -31,7 +31,7 @@ resource "aws_autoscaling_policy" "bat" {
   scaling_adjustment     = 4
   adjustment_type        = "ChangeInCapacity"
   policy_type = "TargetTrackingScaling"
-  cooldown               = 300
+  estimated_instance_warmup = "120"
   autoscaling_group_name = aws_autoscaling_group.asg.name
   target_tracking_configuration {
     predefined_metric_specification {
