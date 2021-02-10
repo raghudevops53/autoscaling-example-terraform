@@ -29,7 +29,7 @@ provider "aws" {
 resource "aws_autoscaling_policy" "bat" {
   name                   = "cpu-based"
   scaling_adjustment     = 4
-  adjustment_type        = "ChangeInCapacity"
+  adjustment_type        = "TargetTrackingScaling"
   cooldown               = 300
   autoscaling_group_name = aws_autoscaling_group.asg.name
   target_tracking_configuration {
