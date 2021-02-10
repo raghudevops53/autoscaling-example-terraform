@@ -28,7 +28,6 @@ provider "aws" {
 
 resource "aws_autoscaling_policy" "bat" {
   name                   = "cpu-based"
-  scaling_adjustment     = 4
   adjustment_type        = "ChangeInCapacity"
   policy_type = "TargetTrackingScaling"
   estimated_instance_warmup = "120"
